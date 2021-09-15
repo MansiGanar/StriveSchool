@@ -1,6 +1,7 @@
 window.onload = async () => {
   await fetchMusic();
   await addSongs();
+  arraysum([1, 2, 3]);
 };
 
 let response;
@@ -20,7 +21,7 @@ const fetchMusic = async (val = "akon") => {
 const addSongs = async () => {
   let newdata = await response.data;
 
-  for (i = 0; i < 4; i++) {
+  for (i = 0; i < 5; i++) {
     let newInnerHtml = ` <div class="card music-card2">
     <img
       class="img-fluid align-self-center mt-3 pl-3 pr-3"
@@ -41,4 +42,19 @@ const handleChange = async (val) => {
   await fetchMusic(val);
   document.getElementById("theThingToChange").innerHTML = "";
   await addSongs();
+};
+
+const arraysum = (arg) => {
+  // let sum;
+  // for (i = 0; i < arg.length; i++) {
+  //   let currentNumber = 0;
+  //   let store = (currentNumber += arg[i]);
+  //   sum = currentNumber + store;
+  // }
+  // console.log(sum);
+
+  const sum = arg.reduce((acc, val) => {
+    return acc + val;
+  });
+  console.log(sum);
 };
