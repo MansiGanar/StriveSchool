@@ -25,7 +25,7 @@ const addSongs = async () => {
     let newInnerHtml = ` <div class="card music-card2">
     <img
       class="img-fluid align-self-center mt-3 pl-3 pr-3"
-      src=${newdata[i].artist["picture"]}
+       src=${newdata[i].artist["picture"]}
       alt="Card image cap"
     />
     <div class="card-body">
