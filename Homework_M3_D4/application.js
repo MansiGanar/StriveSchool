@@ -42,8 +42,7 @@ const getBooks = async () => {
       });
     });
 };
-const handleChange = async () => {
-  await getBooks();
-  document.getElementById("theThingToChange").innerHTML = "";
-  // await addSongs();
-};
+const findBooks = (elem) => {
+  const terms = $('input').val();
+  console.log(terms);  //verify user input
+  };
