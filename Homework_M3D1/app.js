@@ -115,8 +115,37 @@ console.log(angleName(180));
 
 /* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
 
-/* 14. Create a function to find and return the largest **even** number from an array of integers that is passed a parameter. */
+var arr = [0, 6, 7, 7, 7];
+var largest = [0];
+//find the largest num;
+for (var i = 0; i < arr.length; i++) {
+  var comp = arr[i] - largest[0] > 0;
+  if (comp) {
+    largest = [];
+    largest.push(arr[i]);
+  }
+}
+alert(largest); //7
 
+//find the index of 'arr'
+var arrIndex = [];
+for (var i = 0; i < arr.length; i++) {
+  var comp = arr[i] - largest[0] == 0;
+  if (comp) {
+    arrIndex.push(i);
+  }
+}
+alert(arrIndex);
+/* 14. Create a function to find and return the largest **even** number from an array of integers that is passed a parameter. */
+function max_even(arra) {
+  arra.sort((x, y) => y - x);
+
+  for (var i = 0; i < arra.length; i++) {
+    if (arra[i] % 2 == 0) return arra[i];
+  }
+}
+
+console.log(max_even([20, 40, 200]));
 /* 15. Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
         Return `true` if that's the case, return `false` if it's not. */
 
@@ -125,7 +154,16 @@ console.log(angleName(180));
 
 /* 17. Create a function to calculate the sum of two integers (passed as parameters). 
         If the sum is in the 50-80 range, return `65`, otherwise, return `80`. */
+function sortaSum(x, y) {
+  const sum_nums = x + y;
+  if (sum_nums >= 50 && sum_nums <= 80) {
+    return 65;
+  }
+  return 80;
+}
 
+console.log(sortaSum(40, 10));
+console.log(sortaSum(80, 90));
 /* 18. Create a function to convert a number (passed as a parameter) into a string, basing yourself on this example: 
         The number has 3 as a factor â‡’ return `Diego`
         The number has 5 as a factor â‡’ return `Riccardo`
