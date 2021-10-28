@@ -1,6 +1,8 @@
 window.onload = async () => {
   await getBooks();
 };
+
+let shoppingCart = [];
 const getBooks = async () => {
   await fetch("https://striveschool-api.herokuapp.com/books")
     .then((response) => {
@@ -8,15 +10,16 @@ const getBooks = async () => {
     })
     .then((data) => {
       let books = data;
+      console.log(typeof data);
       const booksdata = document.getElementById("photos");
       booksdata.innerHTML = "";
       books.forEach((element) => {
         console.log(data);
         let newInnerHtml = `
         
-        <div class="col-md-4">
-        <div class="card mb-4 shadow-sm">
-          <img src="${element.img}">
+        <div class="col-md-4 booksToShow" >
+        <div class="card mb-4 shadow-sm" >
+          <img src="${element.img}" style="width: 200px " > 
           
             <p class="card-text">
               "${element.title}"
@@ -31,7 +34,7 @@ const getBooks = async () => {
            hide
           </button>
               </div>
-              <button class="btn btn-primary my-2 additemtocartbtn" onclick="addItemToCart">
+              <button class="btn btn-primary my-2 additemtocartbtn" onclick="addItemToCart(${element.asin})">
             Add to cart
           </button>
             
@@ -42,7 +45,11 @@ const getBooks = async () => {
       });
     });
 };
+
+function addItemToCart(asin) {
+  console.log(asin);
+}
 const findBooks = (elem) => {
-  const terms = $('input').val();
-  console.log(terms);  //verify user input
-  };
+  const terms = $("input").val();
+  console.log(terms); //verify user input
+};

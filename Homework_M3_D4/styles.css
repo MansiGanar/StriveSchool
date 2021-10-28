@@ -1,9 +1,18 @@
+.booksToShow {
+}
+
 .additemtocartbtn {
   width: 30%;
   margin: 8px;
 }
 .hide-btn {
   position: absolute;
-  top: 93.7%;
+  top: 85%;
   left: 84%;
+}
+#cart {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(61, 59, 59, 0.24);
+  width: 100%;
 }
