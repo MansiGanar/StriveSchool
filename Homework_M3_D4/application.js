@@ -1,7 +1,7 @@
 window.onload = async () => {
   await getBooks();
 };
-
+let books = [];
 let shoppingCart = [];
 const getBooks = async () => {
   await fetch("https://striveschool-api.herokuapp.com/books")
@@ -9,7 +9,7 @@ const getBooks = async () => {
       return response.json();
     })
     .then((data) => {
-      let books = data;
+      books = data;
       console.log(typeof data);
       const booksdata = document.getElementById("photos");
       booksdata.innerHTML = "";
